@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#ADD8E6",
+        "borderRadius": 20,
+        "color": "white",
+        "marginLeft": "auto",
+        "marginRight": "auto",
+        "marginTop": 150,
+        "width": "90%",
+      }
+    }
+  >
+    <TextInput
+      onChangeText={[Function]}
+      onSubmitEditing={[Function]}
+      placeholder="Enter city"
+      placeholderTextColor="black"
+      value=""
+    />
+  </View>
+  <View>
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#ADD8E6",
+          "borderRadius": 20,
+          "height": 50,
+          "marginLeft": "auto",
+          "marginRight": "auto",
+          "marginTop": 30,
+          "opacity": 1,
+          "textAlign": "center",
+          "width": 100,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontSize": 16,
+            "marginTop": 13,
+          }
+        }
+      >
+        Get Info
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`renders correctly 2`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "marginLeft": "auto",
+        "marginRight": "auto",
+        "marginTop": 150,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "black",
+          "fontSize": 40,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      undefined, undefined
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "black",
+          "fontSize": 22,
+          "marginVertical": 10,
+        }
+      }
+    >
+      8/24/2022, 4:34:53 PM
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "black",
+          "fontSize": 45,
+          "marginVertical": 10,
+        }
+      }
+    >
+      Temp: NaN °C
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "black",
+          "fontSize": 22,
+          "fontWeight": "500",
+          "marginVertical": 10,
+        }
+      }
+    >
+      Min NaN °C / Max NaN °C
+    </Text>
+  </View>
+</View>
+`;
