@@ -1,5 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
-/* eslint-disable no-alert */
 import React, {useState} from 'react';
 import {
   StyleSheet,
@@ -7,6 +5,8 @@ import {
   View,
   TouchableOpacity,
   TextInput,
+  Image,
+  Alert,
 } from 'react-native';
 import axios from 'axios';
 
@@ -15,32 +15,37 @@ interface Props {
   setFetchData: any;
   navigation: any;
 }
-
-const Home: React.FC<Props> = props => {
-  const api = {
-    key: 'c8922c69c948f2e2b4bf08587bb7e7f0',
-  };
-  const [input, setInput] = useState<string>('');
-  function handleclick() {
-    setInput('');
-    axios
-      .get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${input}&units=metric&appid=${api.key}`,
-      )
-      .then(res => {
-        props.setFetchData(res.data);
-        props.navigation.push('Info');
-        console.log(props.fetchData);
-      })
-      .catch(() => {
-        alert('Enter Valid City name');
-      });
+export async function handlefetch(final_link: string, navigate: any) {
+  try {
+    var res: any = await axios.get(final_link);
+    navigate.push('Info');
+    return res.data;
+  } catch (error) {
+    Alert.alert('Enter Valid Capital name');
+    navigate.push('Home');
   }
+}
+
+const Demo: React.FC<Props> = props => {
+  const [input, setInput] = useState<string>('');
+  async function handleclick() {
+    setInput('');
+    var url = `https://api.openweathermap.org/data/2.5/weather?q=${input}&units=metric&appid=c8922c69c948f2e2b4bf08587bb7e7f0`;
+    var finaldata: any = await handlefetch(url, props.navigation);
+    props.setFetchData(finaldata);
+  }
+
   return (
     <View style={styles.container}>
+      <Image
+        source={{
+          uri: 'https://icon-library.com/images/mostly-cloudy-icon/mostly-cloudy-icon-4.jpg',
+        }}
+        style={styles.logo}
+      />
       <View style={styles.inputtext}>
         <TextInput
-          placeholder="Enter city"
+          placeholder="Enter Captial name"
           placeholderTextColor={'black'}
           value={input}
           onChangeText={val => setInput(val)}
@@ -49,41 +54,56 @@ const Home: React.FC<Props> = props => {
       </View>
       <View>
         <TouchableOpacity style={styles.btn} onPress={handleclick}>
-          <Text
-            style={{
-              color: 'black',
-              marginTop: 13,
-              fontSize: 15,
-            }}>
-            Get Info
-          </Text>
+          <Text style={styles.btntext}>Get Info</Text>
         </TouchableOpacity>
       </View>
+      <Text style={styles.logotext}>All Weather Infomartion</Text>
+      <Text style={[styles.logotext, {marginTop: 2}]}>of Location</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  logotext: {
+    color: 'black',
+    fontSize: 28,
+    fontWeight: '500',
+    textAlign: 'center',
+    marginTop: 80,
+  },
+  logo: {
+    height: 250,
+    width: 300,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginTop: 15,
+  },
   container: {
+    backgroundColor: '#13456d',
     flex: 1,
-    backgroundColor: 'white',
+    height: '100%',
   },
   btn: {
     width: 100,
-    backgroundColor: '#ADD8E6',
-    marginTop: 30,
+    backgroundColor: '#cabaa9',
+    marginTop: 18,
     marginLeft: 'auto',
     marginRight: 'auto',
-    height: 50,
-    borderRadius: 20,
+    height: 45,
+    borderRadius: 18,
     alignItems: 'center',
     textAlign: 'center',
   },
+  btntext: {
+    color: 'black',
+    marginTop: 13,
+    fontSize: 15,
+  },
   inputtext: {
-    backgroundColor: '#ADD8E6',
-    marginTop: 150,
+    backgroundColor: '#cabaa9',
     color: 'white',
     borderRadius: 20,
+    marginTop: 40,
     width: '90%',
     marginLeft: 'auto',
     marginRight: 'auto',
@@ -91,4 +111,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Home;
+export default Demo;

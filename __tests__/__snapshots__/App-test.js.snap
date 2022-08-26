@@ -5,7 +5,6 @@ exports[`renders correctly 1`] = `
   style={
     Object {
       "backgroundColor": "white",
-      "flex": 1,
     }
   }
 >
@@ -13,12 +12,12 @@ exports[`renders correctly 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "#ADD8E6",
+        "backgroundColor": "#cabaa9",
         "borderRadius": 20,
         "color": "white",
         "marginLeft": "auto",
         "marginRight": "auto",
-        "marginTop": 150,
+        "marginTop": 10,
         "width": "90%",
       }
     }
@@ -26,7 +25,7 @@ exports[`renders correctly 1`] = `
     <TextInput
       onChangeText={[Function]}
       onSubmitEditing={[Function]}
-      placeholder="Enter city"
+      placeholder="Captial name"
       placeholderTextColor="black"
       value=""
     />
@@ -46,12 +45,12 @@ exports[`renders correctly 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "#ADD8E6",
-          "borderRadius": 20,
-          "height": 50,
+          "backgroundColor": "#cabaa9",
+          "borderRadius": 18,
+          "height": 45,
           "marginLeft": "auto",
           "marginRight": "auto",
-          "marginTop": 30,
+          "marginTop": 10,
           "opacity": 1,
           "textAlign": "center",
           "width": 100,
@@ -62,7 +61,7 @@ exports[`renders correctly 1`] = `
         style={
           Object {
             "color": "black",
-            "fontSize": 16,
+            "fontSize": 15,
             "marginTop": 13,
           }
         }
@@ -71,16 +70,60 @@ exports[`renders correctly 1`] = `
       </Text>
     </View>
   </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#13456d",
+        "borderTopLeftRadius": 40,
+        "borderTopRightRadius": 40,
+        "height": "100%",
+        "marginTop": 5,
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "uri": "https://icon-library.com/images/mostly-cloudy-icon/mostly-cloudy-icon-4.jpg",
+        }
+      }
+      style={
+        Object {
+          "height": 250,
+          "marginLeft": "auto",
+          "marginRight": "auto",
+          "marginTop": 100,
+          "width": 300,
+        }
+      }
+    />
+    <Text
+      style={
+        Object {
+          "color": "black",
+          "fontSize": 28,
+          "fontWeight": "500",
+          "textAlign": "center",
+        }
+      }
+    >
+      All Weather Info of Location
+    </Text>
+  </View>
 </View>
 `;
 
 exports[`renders correctly 2`] = `
 <View
   style={
-    Object {
-      "backgroundColor": "white",
-      "flex": 1,
-    }
+    Array [
+      Object {
+        "height": "100%",
+      },
+      Object {
+        "backgroundColor": "#f4c679",
+      },
+    ]
   }
 >
   <View
@@ -88,55 +131,93 @@ exports[`renders correctly 2`] = `
       Object {
         "marginLeft": "auto",
         "marginRight": "auto",
-        "marginTop": 150,
       }
     }
   >
     <Text
       style={
         Object {
-          "color": "black",
-          "fontSize": 40,
-          "fontWeight": "bold",
+          "color": "white",
+          "fontSize": 22,
+          "marginTop": 45,
+          "marginVertical": 10,
+          "textAlign": "center",
+        }
+      }
+    >
+      Thu Aug 25 2022
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "white",
+          "fontSize": 25,
+          "fontWeight": "400",
+          "textAlign": "center",
         }
       }
     >
       undefined, undefined
     </Text>
+    <Image
+      source={
+        Object {
+          "uri": "https://png.pngtree.com/element_our/20190529/ourlarge/pngtree-weather-forecast-image_1197280.jpg",
+        }
+      }
+      style={
+        Object {
+          "height": 300,
+          "marginLeft": "auto",
+          "marginRight": "auto",
+          "marginTop": 30,
+          "width": 300,
+        }
+      }
+    />
     <Text
       style={
         Object {
-          "color": "black",
-          "fontSize": 22,
-          "marginVertical": 10,
+          "color": "white",
+          "fontSize": 38,
+          "marginTop": -10,
+          "textAlign": "center",
         }
       }
     >
-      8/24/2022, 4:34:53 PM
+      NaN °C
     </Text>
     <Text
       style={
         Object {
-          "color": "black",
-          "fontSize": 45,
-          "marginVertical": 10,
+          "color": "white",
+          "fontSize": 25,
+          "fontWeight": "400",
+          "textAlign": "center",
         }
       }
     >
-      Temp: NaN °C
+      Very Hot
     </Text>
     <Text
       style={
         Object {
-          "color": "black",
+          "color": "white",
           "fontSize": 22,
           "fontWeight": "500",
           "marginVertical": 10,
+          "textAlign": "center",
         }
       }
     >
       Min NaN °C / Max NaN °C
     </Text>
   </View>
+</View>
+`;
+
+exports[`renders correctly 3`] = `
+<View>
+  <View />
 </View>
 `;

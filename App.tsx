@@ -8,11 +8,10 @@ import {FetchResponse} from './types';
 const Stack = createNativeStackNavigator();
 function App() {
   const [fetchdata, setFetchdata] = useState<FetchResponse | null>(null);
-
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home">
+        <Stack.Screen name="Home" options={{headerShown: false}}>
           {props => (
             <Home
               navigation={props.navigation}
@@ -21,7 +20,7 @@ function App() {
             />
           )}
         </Stack.Screen>
-        <Stack.Screen name="Info">
+        <Stack.Screen name="Info" options={{headerShown: false}}>
           {props => (
             <Details navigation={props.navigation} fetchData={fetchdata} />
           )}
