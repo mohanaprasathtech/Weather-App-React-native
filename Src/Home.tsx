@@ -15,7 +15,7 @@ interface Props {
   setFetchData: any;
   navigation: any;
 }
-export async function handlefetch(final_link: string, navigate: any) {
+export async function handlefetch(final_link: string) {
   try {
     var res: any = await axios.get(final_link);
 
