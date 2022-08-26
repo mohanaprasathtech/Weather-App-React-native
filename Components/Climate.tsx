@@ -66,9 +66,6 @@ const Climate: React.FC<Props> = props => {
     </View>
   );
 };
-//rain='https://cdn1.iconfinder.com/data/icons/flat-mobile-app-icons/128/weather-512.png',
-//cold=https://icon-library.com/images/cooling-icon/cooling-icon-14.jpg
-//sumemer=https://www.pngfind.com/pngs/m/311-3117307_weather-icons-png-summer-icon-transparent-background-png.png
 const styles = StyleSheet.create({
   root: {height: '100%'},
   container: {

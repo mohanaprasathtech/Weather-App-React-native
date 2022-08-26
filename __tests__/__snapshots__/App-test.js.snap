@@ -4,10 +4,28 @@ exports[`renders correctly 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "white",
+      "backgroundColor": "#13456d",
+      "flex": 1,
+      "height": "100%",
     }
   }
 >
+  <Image
+    source={
+      Object {
+        "uri": "https://icon-library.com/images/mostly-cloudy-icon/mostly-cloudy-icon-4.jpg",
+      }
+    }
+    style={
+      Object {
+        "height": 250,
+        "marginLeft": "auto",
+        "marginRight": "auto",
+        "marginTop": 15,
+        "width": 300,
+      }
+    }
+  />
   <View
     style={
       Object {
@@ -17,7 +35,7 @@ exports[`renders correctly 1`] = `
         "color": "white",
         "marginLeft": "auto",
         "marginRight": "auto",
-        "marginTop": 10,
+        "marginTop": 40,
         "width": "90%",
       }
     }
@@ -25,7 +43,7 @@ exports[`renders correctly 1`] = `
     <TextInput
       onChangeText={[Function]}
       onSubmitEditing={[Function]}
-      placeholder="Captial name"
+      placeholder="Enter Captial name"
       placeholderTextColor="black"
       value=""
     />
@@ -50,7 +68,7 @@ exports[`renders correctly 1`] = `
           "height": 45,
           "marginLeft": "auto",
           "marginRight": "auto",
-          "marginTop": 10,
+          "marginTop": 18,
           "opacity": 1,
           "textAlign": "center",
           "width": 100,
@@ -70,46 +88,37 @@ exports[`renders correctly 1`] = `
       </Text>
     </View>
   </View>
-  <View
+  <Text
     style={
       Object {
-        "backgroundColor": "#13456d",
-        "borderTopLeftRadius": 40,
-        "borderTopRightRadius": 40,
-        "height": "100%",
-        "marginTop": 5,
+        "color": "black",
+        "fontSize": 28,
+        "fontWeight": "500",
+        "marginTop": 80,
+        "textAlign": "center",
       }
     }
   >
-    <Image
-      source={
-        Object {
-          "uri": "https://icon-library.com/images/mostly-cloudy-icon/mostly-cloudy-icon-4.jpg",
-        }
-      }
-      style={
-        Object {
-          "height": 250,
-          "marginLeft": "auto",
-          "marginRight": "auto",
-          "marginTop": 100,
-          "width": 300,
-        }
-      }
-    />
-    <Text
-      style={
+    All Weather Infomartion
+  </Text>
+  <Text
+    style={
+      Array [
         Object {
           "color": "black",
           "fontSize": 28,
           "fontWeight": "500",
+          "marginTop": 80,
           "textAlign": "center",
-        }
-      }
-    >
-      All Weather Info of Location
-    </Text>
-  </View>
+        },
+        Object {
+          "marginTop": 2,
+        },
+      ]
+    }
+  >
+    of Location
+  </Text>
 </View>
 `;
 
@@ -145,7 +154,7 @@ exports[`renders correctly 2`] = `
         }
       }
     >
-      Thu Aug 25 2022
+      Fri Aug 26 2022
     </Text>
     <Text
       style={

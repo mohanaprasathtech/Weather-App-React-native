@@ -18,11 +18,10 @@ interface Props {
 export async function handlefetch(final_link: string, navigate: any) {
   try {
     var res: any = await axios.get(final_link);
-    navigate.push('Info');
+
     return res.data;
   } catch (error) {
     Alert.alert('Enter Valid Capital name');
-    navigate.push('Home');
   }
 }
 
@@ -33,6 +32,7 @@ const Demo: React.FC<Props> = props => {
     var url = `https://api.openweathermap.org/data/2.5/weather?q=${input}&units=metric&appid=c8922c69c948f2e2b4bf08587bb7e7f0`;
     var finaldata: any = await handlefetch(url, props.navigation);
     props.setFetchData(finaldata);
+    props.navigation.push('Info');
   }
 
   return (
