@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {useState} from 'react';
 import {
   StyleSheet,
@@ -14,25 +15,51 @@ interface Props {
   fetchData: any;
   setFetchData: any;
   navigation: any;
+  setpopulation: any;
+  population?: any;
 }
 export async function handlefetch(final_link: string) {
   try {
     var res: any = await axios.get(final_link);
-
     return res.data;
   } catch (error) {
-    Alert.alert('Enter Valid Capital name');
+    Alert.alert('Enter Valid Country name');
+  }
+}
+export async function populationdata(pop_in: string) {
+  try {
+    const options = {
+      method: 'GET',
+      url: 'https://world-population.p.rapidapi.com/population/',
+      params: {country_name: pop_in},
+      headers: {
+        'X-RapidAPI-Key': '83d04fab03msh5c699c2712e90b6p1de749jsn7fc71a8788f4',
+        'X-RapidAPI-Host': 'world-population.p.rapidapi.com',
+      },
+    };
+    const popressult = await axios.request(options);
+    return popressult.data;
+  } catch (error) {
+    Alert.alert('Enter Valid Country name');
   }
 }
 
-const Demo: React.FC<Props> = props => {
+const Home: React.FC<Props> = props => {
   const [input, setInput] = useState<string>('');
+
   async function handleclick() {
-    setInput('');
-    var url = `https://api.openweathermap.org/data/2.5/weather?q=${input}&units=metric&appid=c8922c69c948f2e2b4bf08587bb7e7f0`;
-    var finaldata: any = await handlefetch(url, props.navigation);
+    var url = `http://api.weatherapi.com/v1/current.json?key=56994fdf59504862bd3185519222608&q=${input}&aqi=yes`;
+    var popinput = input[0].toUpperCase() + input.substring(1);
+    var finaldata: any = await handlefetch(url);
+    var population: any = await populationdata(popinput);
+    props.setpopulation(population);
     props.setFetchData(finaldata);
-    props.navigation.push('Info');
+    if (finaldata) {
+      props.navigation.push('Country');
+      setInput('');
+    } else {
+      props.navigation.push('Home');
+    }
   }
 
   return (
@@ -45,16 +72,18 @@ const Demo: React.FC<Props> = props => {
       />
       <View style={styles.inputtext}>
         <TextInput
-          placeholder="Enter Captial name"
+          placeholder="Enter Country name"
           placeholderTextColor={'black'}
           value={input}
           onChangeText={val => setInput(val)}
-          onSubmitEditing={handleclick}
         />
       </View>
       <View>
-        <TouchableOpacity style={styles.btn} onPress={handleclick}>
-          <Text style={styles.btntext}>Get Info</Text>
+        <TouchableOpacity
+          style={styles.btn}
+          onPress={handleclick}
+          disabled={input.length > 0 ? false : true}>
+          <Text style={styles.btntext}>Submit</Text>
         </TouchableOpacity>
       </View>
       <Text style={styles.logotext}>All Weather Infomartion</Text>
@@ -111,4 +140,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Demo;
+export default Home;

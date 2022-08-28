@@ -9,11 +9,7 @@ interface Props {
 const Details: React.FC<Props> = props => {
   return (
     <View>
-      {props.fetchData?.main ? (
-        <Climate fetchData={props.fetchData} />
-      ) : (
-        <View />
-      )}
+      {props.fetchData ? <Climate fetchData={props.fetchData} /> : <View />}
     </View>
   );
 };

@@ -42,14 +42,18 @@ exports[`renders correctly 1`] = `
   >
     <TextInput
       onChangeText={[Function]}
-      onSubmitEditing={[Function]}
-      placeholder="Enter Captial name"
+      placeholder="Enter Country name"
       placeholderTextColor="black"
       value=""
     />
   </View>
   <View>
     <View
+      accessibilityState={
+        Object {
+          "disabled": true,
+        }
+      }
       accessible={true}
       collapsable={false}
       focusable={true}
@@ -84,7 +88,7 @@ exports[`renders correctly 1`] = `
           }
         }
       >
-        Get Info
+        Submit
       </Text>
     </View>
   </View>
@@ -148,13 +152,13 @@ exports[`renders correctly 2`] = `
         Object {
           "color": "white",
           "fontSize": 22,
-          "marginTop": 45,
+          "marginTop": 4,
           "marginVertical": 10,
           "textAlign": "center",
         }
       }
     >
-      Fri Aug 26 2022
+      Sun Aug 28 2022
     </Text>
     <Text
       style={
@@ -176,11 +180,11 @@ exports[`renders correctly 2`] = `
       }
       style={
         Object {
-          "height": 300,
+          "height": 200,
           "marginLeft": "auto",
           "marginRight": "auto",
-          "marginTop": 30,
-          "width": 300,
+          "marginTop": 20,
+          "width": 200,
         }
       }
     />
@@ -189,7 +193,7 @@ exports[`renders correctly 2`] = `
         Object {
           "color": "white",
           "fontSize": 38,
-          "marginTop": -10,
+          "marginTop": 8,
           "textAlign": "center",
         }
       }
@@ -206,7 +210,7 @@ exports[`renders correctly 2`] = `
         }
       }
     >
-      Very Hot
+      Normal
     </Text>
     <Text
       style={
@@ -222,11 +226,248 @@ exports[`renders correctly 2`] = `
       Min NaN °C / Max NaN °C
     </Text>
   </View>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+        "marginLeft": -18,
+        "marginTop": 10,
+      }
+    }
+  >
+    <View>
+      <Text
+        style={
+          Object {
+            "color": "white",
+            "fontSize": 19,
+          }
+        }
+      >
+        Wind Speed
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "white",
+            "fontSize": 20,
+            "textAlign": "center",
+          }
+        }
+      >
+        undefined km/h
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "marginLeft": 30,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "white",
+            "fontSize": 19,
+          }
+        }
+      >
+        Precipitation
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "white",
+            "fontSize": 20,
+            "textAlign": "center",
+          }
+        }
+      />
+    </View>
+  </View>
 </View>
 `;
 
 exports[`renders correctly 3`] = `
 <View>
   <View />
+</View>
+`;
+
+exports[`renders correctly 4`] = `
+<View>
+  <Image
+    source={
+      Object {
+        "uri": "https://countryflagsapi.com/png/undefined",
+      }
+    }
+    style={
+      Object {
+        "borderRadius": 20,
+        "height": 250,
+        "marginLeft": "auto",
+        "marginRight": "auto",
+        "marginTop": 20,
+        "width": "80%",
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+        "marginLeft": -18,
+        "marginTop": 50,
+      }
+    }
+  >
+    <View>
+      <Text
+        style={
+          Object {
+            "fontSize": 20,
+          }
+        }
+      >
+        Captial
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontSize": 18,
+            "textAlign": "center",
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "marginLeft": 30,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 20,
+          }
+        }
+      >
+        Population
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontSize": 18,
+            "textAlign": "center",
+          }
+        }
+      />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+        "marginLeft": -22,
+        "marginTop": 20,
+      }
+    }
+  >
+    <View>
+      <Text
+        style={
+          Object {
+            "fontSize": 20,
+          }
+        }
+      >
+        Latitude
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontSize": 18,
+            "textAlign": "center",
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "marginLeft": 30,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 20,
+          }
+        }
+      >
+        Longitude
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontSize": 18,
+            "textAlign": "center",
+          }
+        }
+      />
+    </View>
+  </View>
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#cabaa9",
+        "borderRadius": 18,
+        "height": 45,
+        "marginLeft": "auto",
+        "marginRight": "auto",
+        "marginTop": 38,
+        "opacity": 1,
+        "padding": 5,
+        "paddingBottom": 5,
+        "textAlign": "center",
+        "width": 180,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "black",
+          "fontSize": 15,
+          "marginTop": 6,
+        }
+      }
+    >
+      Capital weather
+    </Text>
+  </View>
 </View>
 `;
