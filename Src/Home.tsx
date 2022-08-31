@@ -49,7 +49,7 @@ const Home: React.FC<Props> = props => {
 
   async function handleclick() {
     var url = `http://api.weatherapi.com/v1/current.json?key=56994fdf59504862bd3185519222608&q=${input}&aqi=yes`;
-    var popinput = input[0].toUpperCase() + input.substring(1);
+    var popinput = input[0].toUpperCase() + input.substring(1).trimEnd();
     var finaldata: any = await handlefetch(url);
     var population: any = await populationdata(popinput);
     props.setpopulation(population);
