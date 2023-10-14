@@ -33,7 +33,7 @@ export async function populationdata(pop_in: string) {
       url: 'https://world-population.p.rapidapi.com/population/',
       params: {country_name: pop_in},
       headers: {
-        'X-RapidAPI-Key': '83d04fab03msh5c699c2712e90b6p1de749jsn7fc71a8788f4',
+        'X-RapidAPI-Key': "XYZ",
         'X-RapidAPI-Host': 'world-population.p.rapidapi.com',
       },
     };
@@ -48,7 +48,7 @@ const Home: React.FC<Props> = props => {
   const [input, setInput] = useState<string>('');
 
   async function handleclick() {
-    var url = `http://api.weatherapi.com/v1/current.json?key=56994fdf59504862bd3185519222608&q=${input}&aqi=yes`;
+    var url = `http://api.weatherapi.com/v1/current.json`;
     var popinput = input[0].toUpperCase() + input.substring(1).trimEnd();
     var finaldata: any = await handlefetch(url);
     var population: any = await populationdata(popinput);
